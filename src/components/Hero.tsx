@@ -26,7 +26,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="sm:flex flex-col">
-          <img src="/src/assets/banner-stack.png" alt=""className=" w-full" />
+          <img src="./src/assets/banner-stack.png" alt=""className=" w-full" />
         </div>
       </div>
     </section>
