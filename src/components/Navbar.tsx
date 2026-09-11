@@ -1,8 +1,10 @@
+import Logo from '../assets/logo-text.png';
+
 const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 container mx-auto py-6">
       <div className=" flex justify-between items-center">
-        <img src="/src/assets/logo-text.png" alt="" />
+        <img src={Logo} alt="" />
         <ul className=" flex  justify-center gap-6">
           <li>
             <a href="#" className=" text-[#D91B7E]">

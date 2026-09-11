@@ -1,3 +1,5 @@
+import heroPng from '../assets/banner-stack.png'
+
 const Hero = () => {
   return (
     <section className="my-10 ">
@@ -26,7 +28,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="sm:flex flex-col">
-          <img src="./src/assets/banner-stack.png" alt=""className=" w-full" />
+          <img src={heroPng} alt=""className=" w-full " />
         </div>
       </div>
     </section>
