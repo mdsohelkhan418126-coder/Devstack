@@ -56,16 +56,16 @@ const App = () => {
               <div className="flex items-center gap-2">
                 <img src={Logo} alt="Dev Stack" className="h-6 w-auto" />
               </div>
-              <p className="mt-3 max-w-xs text-[10px] leading-5 text-slate-400">
+              <p className="mt-3 max-w-xs text-[12px] leading-5 text-slate-400">
                 Curate, compare, and build your ideal development stack.
               </p>
             </div>
 
             <div>
-              <h3 className="text-[10px] font-bold uppercase tracking-wider text-slate-800">
+              <h3 className="text-[12px] font-bold uppercase tracking-wider text-slate-800">
                 Product
               </h3>
-              <div className="mt-3 space-y-2 text-[10px] text-slate-400">
+              <div className="mt-3 space-y-2 text-[12px] text-slate-400">
                 <a className="block hover:text-pink-500" href="#technologies">
                   Technologies
                 </a>
