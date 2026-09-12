@@ -1,29 +1,47 @@
 import { Suspense } from 'react';
-import SkillCard from './SkillCard';
 import type { Skills } from '../types';
+import SkillCard from './SkillCard';
 
-const skillData = async (): Promise<Skills[]> => {
-  const res = await fetch('/data.json');
-  const data = await res.json();
-  return data;
-};
+const skillDataPromise: Promise<Skills[]> = (async (): Promise<Skills[]> => {
+  const response = await fetch('/data.json');
 
-const Skill = () => {
-  const skillDataPromiss = skillData();
+  if (!response.ok) {
+    throw new Error(`Failed to load technology data (${response.status}).`);
+  }
+
+  return (await response.json()) as Skills[];
+})();
+
+interface SkillProps {
+  selectedItems: Skills[];
+  onAdd: (item: Skills) => void;
+}
+
+const Skill = ({ selectedItems, onAdd }: SkillProps) => {
   return (
-    <section className=" container mx-auto">
-      <div>
-        <h1 className=" font-extrabold text-3xl ">
-          Explore the
-          <span className=" text-[#EC4899] font-extrabold">Technologies</span>
-        </h1>
-        <p className=" text-[#64748B] text-xl mt-2">
+    <section id="technologies" className="scroll-mt-24">
+      <div className="mb-7">
+        <h2 className="text-2xl font-extrabold tracking-tight text-slate-900">
+          Explore the <span className="text-pink-500">Technologies</span>
+        </h2>
+        <p className="mt-1.5 text-xs text-slate-500">
           Pick one technology per category to build your ideal stack.
         </p>
-        <Suspense fallback={<h1>Lodaing ...</h1>}>
-          <SkillCard skillDataPromiss={skillDataPromiss}></SkillCard>
-        </Suspense>
       </div>
+
+      <Suspense
+        fallback={
+          <div className="rounded-xl border border-slate-200 bg-white p-10 text-center text-sm text-slate-500">
+            Loading technologies...
+          </div>
+        }
+      >
+        <SkillCard
+          skillDataPromise={skillDataPromise}
+          selectedItems={selectedItems}
+          onAdd={onAdd}
+        />
+      </Suspense>
     </section>
   );
 };
