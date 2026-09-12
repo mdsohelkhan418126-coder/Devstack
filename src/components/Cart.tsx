@@ -47,7 +47,7 @@ const Cart = ({ items, onRemove, onRemoveAll }: CartProps) => {
             >
               <img src={item.icon} alt="" className="h-7 w-7 object-contain" />
               <div className="min-w-0 flex-1">
-                <p className="truncate text-[10px] font-semibold text-slate-800">
+                <p className="truncate text-[12px] font-bold text-slate-800">
                   {item.name}
                 </p>
                 <p className="text-[8px] text-slate-400">{item.category}</p>
