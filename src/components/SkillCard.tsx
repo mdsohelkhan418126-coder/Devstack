@@ -12,7 +12,7 @@ const SkillCard = ({ skillDataPromise, selectedItems, onAdd }: SkillProps) => {
   const skills = use(skillDataPromise);
   const selectedIds = new Set(selectedItems.map(item => item.id));
 
-  return (
+  return (                        
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
       {skills.map(item => (
         <AddCart

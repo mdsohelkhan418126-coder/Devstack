@@ -26,7 +26,7 @@ const Navbar = () => {
           <img src={Logo} alt="Dev Stack" className="h-7 w-auto" />
         </a>
 
-        <ul className="hidden items-center gap-7 text-[11px] font-medium text-slate-500 md:flex">
+        <ul className="hidden items-center gap-7 text-xl font-medium text-slate-500 md:flex">
           {links.map(link => (
             <li key={link}>
               <a
@@ -43,7 +43,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3 text-[11px]">
+        <div className="flex items-center gap-3 text-xl">
           <button
             type="button"
             onClick={() => showToast('Sign in is ready for the next step.')}

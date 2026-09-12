@@ -10,7 +10,7 @@ interface AddCartProps {
 const AddCart = ({ item, selected, onAdd }: AddCartProps) => {
   return (
     <article className="flex min-h-71.25 flex-col rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-      <div className="flex items-start justify-between gap-3">
+      <div className="flex items-start font-bold justify-between gap-6">
         <img
           src={item.icon}
           alt={item.name}

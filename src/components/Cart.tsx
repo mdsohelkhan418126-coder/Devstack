@@ -31,15 +31,12 @@ const Cart = ({ items, onRemove, onRemoveAll }: CartProps) => {
 
       {items.length === 0 ? (
         <div className="py-12 text-center">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-slate-50 text-lg">
-            🧩
-          </div>
-          <p className="mt-3 text-xs font-semibold text-slate-500">
-            No technologies selected
+          
+          <p className="mt-3 border border-gray-200  rounded-lg p-5 py-5 text-xs font-semibold text-slate-500 text-center">
+            Your stack is empty
           </p>
-          <p className="mt-1 text-[10px] leading-4 text-slate-400">
-            Add technologies from the list to build your stack.
-          </p>
+          
+          
         </div>
       ) : (
         <div className="space-y-2 py-3">
